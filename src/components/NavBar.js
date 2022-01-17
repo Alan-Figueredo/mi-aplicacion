@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-
+import CartWidget from "../components/CartWidget.js";
+import Cart from "../images/Cart.png"
 function NavBar(){
     let nombreH1={
         color: "white",
@@ -30,6 +31,7 @@ function NavBar(){
                 <div className="col text-right">
                     <a href="#" style={vinculo}>login</a>
                 </div>
+                <CartWidget Cart={Cart}/>
             </div>
         </div>
     );
