@@ -33,7 +33,8 @@ function NavBar(){
                     <a href="#" style={vinculo}>login</a>
                 </div>
                 <div className="col">
-                    <CartWidget Cart={Cart}/>
+                    <a href="#"><CartWidget Cart={Cart}/></a>
+                    
                 </div>
                 
             </div>
