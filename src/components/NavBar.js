@@ -1,4 +1,5 @@
-import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import CartWidget from "../components/CartWidget.js";
 import Cart from "../images/Cart.png"
 function NavBar(){
@@ -19,19 +20,22 @@ function NavBar(){
                 <div className="col mx-5">
                     <h1 style={nombreH1}>TusBebidasOnline</h1>
                 </div>
-                <div className="col mx-5">
+                <div className="col  mt-2">
                     <a href="#" style={vinculo}>Inicio</a>
                 </div>
-                <div className="col">
+                <div className="col mt-2">
                     <a href="#" style={vinculo}>Tienda</a>
                 </div>
-                <div className="col">
+                <div className="col mt-2">
                     <a href="#" style={vinculo}>Sobre nosotros</a>
                 </div>
-                <div className="col text-right">
+                <div className="col mt-2">
                     <a href="#" style={vinculo}>login</a>
                 </div>
-                <CartWidget Cart={Cart}/>
+                <div className="col">
+                    <CartWidget Cart={Cart}/>
+                </div>
+                
             </div>
         </div>
     );
