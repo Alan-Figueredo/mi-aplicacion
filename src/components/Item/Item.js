@@ -10,7 +10,7 @@ export const Item =({product})=>{
                 <img className="imagen-card img-thumbnail" src={product.img}/>
                 <h5 className="card-title">{product.name}</h5>
                 <p className="card-text">{product.description}</p>
-                <ItemCount stock={5} initial={1}/>
+                <ItemCount stock={product.stock} initial={1}/>
             </div>
         </div>
     </>
