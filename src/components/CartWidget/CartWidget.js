@@ -1,4 +1,4 @@
-import "../components/CartWidget.css"
+import "../CartWidget/CartWidget.css"
 import "bootstrap/dist/css/bootstrap.css"
 
 const CartWidget = ({Cart})=>{

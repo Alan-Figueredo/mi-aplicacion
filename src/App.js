@@ -1,14 +1,14 @@
 import React from "react"
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import Brahma from "../src/images/Brahma.jpg"
+import { ItemList } from "./components/ItemList/ItemList";
+import { Item } from "./components/Item/Item";
 function App() {
   return (
     <React.Fragment>
       <NavBar/>
-      <ItemListContainer name="Brahma" description="Lata Brahma 500 cc" image={Brahma}/>
+      <ItemListContainer/>
     </React.Fragment>
 
   );
