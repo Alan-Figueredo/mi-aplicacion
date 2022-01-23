@@ -10,7 +10,7 @@ export const ItemCount =({stock, initial})=>{
     }
     return(<>
         <button className="btn btn-primary" onClick={restar}>-</button>
-        <input value={contador} className="text-center"></input>
+        <input defaultValue={contador} className="text-center"></input>
         <button className="btn btn-primary" onClick={onAdd}>+</button>
     </>
     );
