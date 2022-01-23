@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import CartWidget from "../components/CartWidget.js";
+import CartWidget from "./CartWidget/CartWidget.js";
 import Cart from "../images/Cart.png"
 function NavBar(){
     let nombreH1={

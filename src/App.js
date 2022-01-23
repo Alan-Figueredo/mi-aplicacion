@@ -2,7 +2,7 @@ import React from "react"
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Brahma from "../src/images/Brahma.jpg"
 function App() {
   return (

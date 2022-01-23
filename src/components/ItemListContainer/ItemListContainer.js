@@ -1,7 +1,7 @@
 import React from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../components/ItemListContainer.css"
-import { ItemCount } from "./ItemCount"
+import { ItemCount } from "../ItemCount"
 const ItemListContainer =({name,description,image})=>{
     return(
         <>
