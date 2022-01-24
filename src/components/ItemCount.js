@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export const ItemCount =({stock, initial})=>{
     const [contador, setCounter] = useState(initial);
-    const onAdd=()=>{
+    const sumar=()=>{
         contador < stock? setCounter(contador +1): setCounter(contador);
     }
     const restar=()=>{
@@ -11,7 +11,7 @@ export const ItemCount =({stock, initial})=>{
     return(<>
         <button className="btn btn-primary" onClick={restar}>-</button>
         <input defaultValue={contador} className="text-center"></input>
-        <button className="btn btn-primary" onClick={onAdd}>+</button>
+        <button className="btn btn-primary" onClick={sumar}>+</button>
     </>
     );
 }
