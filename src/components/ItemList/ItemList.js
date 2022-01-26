@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
-import { getProductos } from "../baseDeDatos.js";
+import { getProductos } from "../mocks/baseDeDatos.js";
 import { Item } from "../Item/Item.js";
 
 
