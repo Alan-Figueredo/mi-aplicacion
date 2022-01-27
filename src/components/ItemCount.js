@@ -9,9 +9,12 @@ export const ItemCount =({stock, initial})=>{
         contador > initial? setCounter(contador -1): setCounter(contador);
     }
     return(<>
-        <button className="btn btn-primary" onClick={restar}>-</button>
-        <input defaultValue={contador} className="text-center"></input>
-        <button className="btn btn-primary" onClick={sumar}>+</button>
+        <div className="row mb-2">
+            <button className="btn btn-primary col-sm-2 m-auto" onClick={restar}>-</button>
+            <p  className="text-center col-sm-2 my-auto">{contador}</p>
+            <button className="btn btn-primary col-sm-2 m-auto" onClick={sumar}>+</button>
+        </div>
+        
     </>
     );
 }

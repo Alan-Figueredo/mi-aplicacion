@@ -1,17 +1,18 @@
 import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
-import { getProductos } from "../mocks/baseDeDatos.js";
 import { Item } from "../Item/Item.js";
 
 
-function ItemList (){
+function ItemList ({product}){
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        const URL = "http://localhost:3001/productos"
         setIsLoading(true)
-        getProductos()
-        .then((data)=> {setProducts(data)})
+        fetch(URL)
+        .then((response)=> response.json())
+        .then((json) =>setProducts(json))
         .catch((error)=> {console.error(error)})
         .finally(()=> setIsLoading(false))
     }, []);
@@ -19,7 +20,7 @@ function ItemList (){
         <div className="row">
             {isLoading? (<p className="text-center">Cargando...</p>): (products.map((product)=>(
                     <div className="col" key={product.id}>
-                        <Item key={product.id} product={product}/>
+                        <Item key={product.id} product={product} id={product.id}/>
                     </div>
             )))}
             

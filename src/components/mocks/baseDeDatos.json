@@ -1,27 +1,36 @@
 {
-    "productos":[
-        {id: 1,
-         name: "Brahma",
-         description:"Lata de brahma 477cc",
-         price:150,
-         stock: 7,
-         img: "https://www.selectmarket.com.ar/images/productos-600-600/img-0000001218-202010171026-8551.jpg"},
-        {id: 2,
-         name: "Quilmes",
-         description:"Lata de Quilmes 477cc",
-         price:160,
-         stock: 5,
-         img: "https://th.bing.com/th/id/OIP.bIgTsbB0F5-lpSrnhq0EhgHaIh?pid=ImgDet&rs=1"},
-        {id: 3,
-         name: "Warsteiner",
-         description:"Botella de Warsteiner 1lts",
-         price:210,
-         stock: 3,
-         img: "https://th.bing.com/th/id/R.313254128f52f0d1969e7fee629c96da?rik=I1x5PawR4nNnrA&riu=http%3a%2f%2fst1.sedovin.com%2f1460-large_default%2fwarsteiner-botella-330-ml.jpg&ehk=eZMIgo4INiliHIAG%2bEMaXBeDJ0417ILRN%2b9KYd3XCCQ%3d&risl=&pid=ImgRaw&r=0"},
+    "productos": [
+        {
+            "id":1,
+            "name": "Brahma Lata",
+            "price": 100,
+            "description": "Lata de Brahma 440cc",
+            "stock": 100,
+            "img": "https://th.bing.com/th/id/OIP.cSgPhT80SFEqVQuP_RthKwHaHa?pid=ImgDet&rs=1"
+        },
+        {
+            "id":2,
+            "name": "Quilmes Lata",
+            "price": 110,
+            "description": "Lata de Quilmes 440cc",
+            "stock": 100,
+            "img": "https://rojoynegro.com.ar/pedidos/wp-content/uploads/2020/01/lata-quilmes.jpg"
+        },
+        {
+            "id":3,
+            "name": "Warsteiner",
+            "price": 100,
+            "description": "Botella de Warsteiner 1lts",
+            "stock": 100,
+            "img": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3100557_f.jpg"
+        },
+        {
+            "id":4,
+            "name": "Heineken",
+            "price": 100,
+            "description": "Botella de Heineken 1lts",
+            "stock": 100,
+            "img": "https://th.bing.com/th/id/R.5fae3408a521e9abd49f42c11b1c6330?rik=8l3hgM9tvXILeg&riu=http%3a%2f%2fwww.vieille.cl%2fwp-content%2fuploads%2f2016%2f05%2fSin-t%c3%adtulo-172.png&ehk=E7doPRA4%2fbdKf4jX2t9gCee7QW9%2bzw9r6CCLDmtAtp0%3d&risl=&pid=ImgRaw&r=0"
+        }
     ]
-} 
-export function getProductos(){
-    return new Promise((resolve, reject) =>{
-        setTimeout(()=> resolve(PRODUCTS), 3000);
-    })
 }
