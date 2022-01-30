@@ -1,8 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import { ItemDetail } from "../itemDetail/ItemDetail"
-export const ItemDetailContainer =({product})=>{
-
+export const ItemDetailContainer =()=>{
     return(
-        <ItemDetail product={product}/>
+        <ItemDetail />
     )
 }

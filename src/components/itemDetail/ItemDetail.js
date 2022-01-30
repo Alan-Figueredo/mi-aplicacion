@@ -1,7 +1,20 @@
 import "bootstrap/dist/css/bootstrap.min.css"
-export const ItemDetail =({product})=>{
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+export const ItemDetail =()=>{
+    const { productID } = useParams();
+    const [product, setProduct] =useState();
+    const [isLoading, setIsLoading] =useState(false)
+    useEffect(()=>{
+        const URL = `http://localhost:3001/productos/${productID}`;
+        setIsLoading(true)
+        fetch(URL)
+        .then((res) => res.json())
+        .then((data) => setProduct(data))
+        .finally(()=> setIsLoading(false))
+    }, [productID]);
+    if(isLoading || !product) return <p>Cargando...</p>
     return(
-        <>
             <div className="card mt-3 mx-3 shadow">
                 <div className="card-body row">
                     <div className="col-sm-4">
@@ -16,6 +29,5 @@ export const ItemDetail =({product})=>{
                     </div>
                 </div>
             </div>
-        </>
-    );
+    )
 }
