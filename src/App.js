@@ -1,13 +1,23 @@
 import React from "react"
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+
 function App() {
   return (
-    <React.Fragment>
+    <Router>
       <NavBar/>
-      <ItemListContainer/>
-    </React.Fragment>
+      <Routes>
+        <Route path="/">
+          <Route index element={<ItemListContainer/>}/>
+          <Route path="productos"/>
+          <Route/>
+        </Route>
+      </Routes>
+    </Router>
+
+
 
   );
 }

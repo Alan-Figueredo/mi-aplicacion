@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import CartWidget from "./CartWidget/CartWidget.js";
 import Cart from "../images/Cart.png"
+import { Link } from "react-router-dom";
 function NavBar(){
     let nombreH1={
         color: "white",
@@ -21,19 +22,19 @@ function NavBar(){
                     <h1 style={nombreH1}>TusBebidasOnline</h1>
                 </div>
                 <div className="col  mt-2">
-                    <a href="#" style={vinculo}>Inicio</a>
+                    <Link to="" style={vinculo}>Inicio</Link>
                 </div>
                 <div className="col mt-2">
-                    <a href="#" style={vinculo}>Tienda</a>
+                    <Link to="" style={vinculo}>Tienda</Link>
                 </div>
                 <div className="col mt-2">
-                    <a href="#" style={vinculo}>Sobre nosotros</a>
+                    <Link to="" style={vinculo}>Sobre nosotros</Link>
                 </div>
                 <div className="col mt-2">
-                    <a href="#" style={vinculo}>login</a>
+                    <Link to="" style={vinculo}>login</Link>
                 </div>
                 <div className="col">
-                    <a href="#"><CartWidget Cart={Cart}/></a>
+                    <Link to=""><CartWidget Cart={Cart}/></Link>
                     
                 </div>
                 
