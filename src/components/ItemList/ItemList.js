@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { Item } from "../Item/Item.js";
 
 
-function ItemList ({product}){
+function ItemList (){
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -19,7 +19,7 @@ function ItemList ({product}){
     return(
         <div className="row">
             {isLoading? (<p className="text-center">Cargando...</p>): (products.map((product)=>(
-                    <div className="col" key={product.id}>
+                    <div className="col-3" key={product.id}>
                         <Item key={product.id} product={product} id={product.id}/>
                     </div>
             )))}

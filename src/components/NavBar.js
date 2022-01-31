@@ -1,5 +1,4 @@
 import "bootstrap/dist/css/bootstrap.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import CartWidget from "./CartWidget/CartWidget.js";
 import Cart from "../images/Cart.png"
 import { Link } from "react-router-dom";
@@ -19,13 +18,13 @@ function NavBar(){
         <div className="flexbox py-3" style={navBarStyle}>
             <div className="row">
                 <div className="col mx-5">
-                    <h1 style={nombreH1}>TusBebidasOnline</h1>
+                    <Link to="/" style={{textDecoration:"none"}}><h1 style={nombreH1}>TusBebidasOnline</h1></Link>
                 </div>
                 <div className="col  mt-2">
-                    <Link to="" style={vinculo}>Inicio</Link>
+                    <Link to="/" style={vinculo}>Inicio</Link>
                 </div>
                 <div className="col mt-2">
-                    <Link to="" style={vinculo}>Tienda</Link>
+                    <Link to="/categories" style={vinculo}>Categorias</Link>
                 </div>
                 <div className="col mt-2">
                     <Link to="" style={vinculo}>Sobre nosotros</Link>

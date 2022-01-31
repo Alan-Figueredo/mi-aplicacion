@@ -22,12 +22,12 @@ export const ItemDetail =()=>{
         .then((data) => setProduct(data))
         .finally(()=> setIsLoading(false))
     }, [productID]);
-    if(isLoading || !product) return <p>Cargando...</p>
+    if(isLoading || !product) return <p className="text-center mt-5" style={{fontSize:"30px"}}>Cargando...</p>
     return(
             <div className="col-6  mt-3 mx-3 shadow text-center" style={styleItem}>
                 <div className="card-body row">
                     <div className="col-sm-12">
-                        <img className="imagen-card img-thumbnail" src={product.img}/>
+                        <img className="imagen-card img-thumbnail" src={product.img} alt={product.name}/>
                     </div>
                 </div>
                 <div className="card-body row">

@@ -5,7 +5,9 @@ import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { ItemDetail } from "./components/itemDetail/ItemDetail";
-import notFoundPage from "./components/notFoundPage";
+import NotFoundPage from "./components/NotFoundPage";
+import Categories from "./components/Categories";
+
 
 function App() {
   return (
@@ -14,12 +16,17 @@ function App() {
       <Routes>
         <Route path="/">
           <Route index element={<ItemListContainer/>}/>
-          <Route path="productos">
-            <Route index element={<ItemDetailContainer/>} />
-            <Route path=":productID" element={<ItemDetail/>} />
-          </Route>
+            <Route path="productos">
+              <Route index element={<ItemDetailContainer/>} />
+              <Route path=":productID" element={<ItemDetail/>} />
+            </Route>
           <Route/>
-          <Route path='*' element={<notFoundPage/>} />
+          <Route index element={<Categories/>}/>
+            <Route path="categories">
+              <Route index element={<Categories/>} />
+            </Route>
+          <Route/>
+          <Route path='*' element={<NotFoundPage/>} />
         </Route>
       </Routes>
     </Router>
