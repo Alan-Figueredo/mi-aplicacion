@@ -3,33 +3,33 @@
         {
             "id":1,
             "name": "Brahma Lata",
-            "price": 100,
+            "price": 110,
             "description": "Lata de Brahma 440cc",
-            "stock": 100,
+            "stock": 60,
             "img": "https://th.bing.com/th/id/OIP.cSgPhT80SFEqVQuP_RthKwHaHa?pid=ImgDet&rs=1"
         },
         {
             "id":2,
             "name": "Quilmes Lata",
-            "price": 110,
+            "price": 120,
             "description": "Lata de Quilmes 440cc",
-            "stock": 100,
+            "stock": 20,
             "img": "https://rojoynegro.com.ar/pedidos/wp-content/uploads/2020/01/lata-quilmes.jpg"
         },
         {
             "id":3,
             "name": "Warsteiner",
-            "price": 100,
+            "price": 180,
             "description": "Botella de Warsteiner 1lts",
-            "stock": 100,
+            "stock": 50,
             "img": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3100557_f.jpg"
         },
         {
             "id":4,
             "name": "Heineken",
-            "price": 100,
+            "price": 170,
             "description": "Botella de Heineken 1lts",
-            "stock": 100,
+            "stock": 30,
             "img": "https://th.bing.com/th/id/R.5fae3408a521e9abd49f42c11b1c6330?rik=8l3hgM9tvXILeg&riu=http%3a%2f%2fwww.vieille.cl%2fwp-content%2fuploads%2f2016%2f05%2fSin-t%c3%adtulo-172.png&ehk=E7doPRA4%2fbdKf4jX2t9gCee7QW9%2bzw9r6CCLDmtAtp0%3d&risl=&pid=ImgRaw&r=0"
         }
     ]

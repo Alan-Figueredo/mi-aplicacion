@@ -11,7 +11,6 @@ export const Item =({product})=>{
                     <h5 className="card-title">{product.name}</h5>
                     <p className="card-text">{product.description}</p>
                     <button onClick={()=>navigate(`/productos/${product.id}`)} className="btn btn-light mb-3">Ver detalle</button>
-                    <ItemCount stock={product.stock} initial={1} />
                 </div>
             </div>
     );
