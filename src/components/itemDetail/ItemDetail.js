@@ -20,7 +20,7 @@ export const ItemDetail =()=>{
     }, [productID]);
     if(isLoading || !product) return <p className="text-center mt-5" style={{fontSize:"30px"}}>Cargando...</p>
     return(
-            <div className="shadow text-center card mt-5" style={{justifyContent:"center", marginLeft:"auto", marginRight:"auto"}}>
+            <div className="shadow text-center card mt-5" style={{justifyContent:"center", marginLeft:"auto", marginRight:"auto", width:"50%"}}>
                 <div className="card-body row">
                     <div className="col-sm-12">
                         <img className="imagen-card img-thumbnail" src={product.img} alt={product.name}/>
@@ -37,9 +37,14 @@ export const ItemDetail =()=>{
 
                 <ItemCount stock={product.stock} initial={1}/>
                 
-                <div className="card-body row">
+                <div className="mt-3 row">
                     <div className="col-sm-2 card-body">
-                        <button className="btn btn-primary">Comprar ahora</button>
+                        <button className="btn btn-primary" style={{width:"auto"}}>Comprar ahora</button>
+                    </div>
+                </div>
+                <div className="mb-3 row">
+                    <div className="col-sm-2 card-body">
+                        <button className="btn" style={{backgroundColor:"rgba(65,137,230,.15)", color:"#3483fa", width:"auto"}}>Agregar al carrito</button>
                     </div>
                 </div>
             </div>
