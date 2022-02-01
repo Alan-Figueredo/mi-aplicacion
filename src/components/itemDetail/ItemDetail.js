@@ -6,11 +6,7 @@ export const ItemDetail =()=>{
     const fuentePrecio ={
         fontSize: "20px"
     }
-    const styleItem ={
-        textAlign:"center",
-        display: "inline-block",
-        verticalAlign:"middle"
-    }
+
     const { productID } = useParams();
     const [product, setProduct] =useState();
     const [isLoading, setIsLoading] =useState(false)
@@ -24,7 +20,7 @@ export const ItemDetail =()=>{
     }, [productID]);
     if(isLoading || !product) return <p className="text-center mt-5" style={{fontSize:"30px"}}>Cargando...</p>
     return(
-            <div className="col-6  mt-3 mx-3 shadow text-center" style={styleItem}>
+            <div className="shadow text-center card mt-5" style={{justifyContent:"center", marginLeft:"auto", marginRight:"auto"}}>
                 <div className="card-body row">
                     <div className="col-sm-12">
                         <img className="imagen-card img-thumbnail" src={product.img} alt={product.name}/>
@@ -32,10 +28,10 @@ export const ItemDetail =()=>{
                 </div>
                 <div className="card-body row">
                     <div className=" col-sm-12">
-                            <h5 className="card-title">{product.name}</h5>
-                            <p className="card-text">{product.description}</p>
-                            <p className="card-text">Stock disponible: {product.stock}</p>
-                            <p style={fuentePrecio}><b>${product.price}</b></p>
+                        <h5 className="card-title">{product.name}</h5>
+                        <p className="card-text">{product.description}</p>
+                        <p className="card-text">Stock disponible: {product.stock}</p>
+                        <p style={fuentePrecio}><b>${product.price}</b></p>
                     </div>
                 </div>
 
