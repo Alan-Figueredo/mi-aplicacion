@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ItemCount } from "../ItemCount";
 export const ItemDetail =()=>{
     const fuentePrecio ={
@@ -39,7 +39,7 @@ export const ItemDetail =()=>{
                 
                 <div className="mt-3 row">
                     <div className="col-sm-2 card-body">
-                        <button className="btn btn-primary" style={{width:"auto"}}>Comprar ahora</button>
+                    <Link to="/cart"><button className="btn btn-primary" style={{width:"auto"}}>Comprar ahora</button></Link>
                     </div>
                 </div>
                 <div className="mb-3 row">

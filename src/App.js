@@ -7,6 +7,7 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetail
 import { ItemDetail } from "./components/itemDetail/ItemDetail";
 import NotFoundPage from "./components/NotFoundPage";
 import Categories from "./components/Categories";
+import Cart from "./components/Cart/Cart";
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route index element={<Categories/>} />
             </Route>
           <Route/>
+          <Route path="cart" element={<Cart/>} />
           <Route path='*' element={<NotFoundPage/>} />
         </Route>
       </Routes>

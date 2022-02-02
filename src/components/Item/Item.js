@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom"
 export const Item =({product})=>{
     let navigate = useNavigate();
 
+
     return(
             <div className="card mt-3 mx-3 shadow">
                 <div className="card-body">
