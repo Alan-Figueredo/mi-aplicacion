@@ -7,26 +7,24 @@ export const ItemCount =({stock, initial})=>{
     }
     const [contador, setCounter] = useState(initial);
 
+ 
+    const sumar =()=>{ 
+        if(contador < stock){
+            setCounter(contador+1);
+        }
+        else{
+            botonSumar.disabled = true;
+            divContador.append("Llegaste al limite de productos!");
+        }
+        //contador < stock? setCounter(contador+1): setCounter(contador);
+    }
 
     //const botonRestar = document.getElementById(restar);
     const botonSumar = document.getElementById("sumar");
     const botonRestar = document.getElementById("restar");
     const divContador = document.getElementById("divContador")
     if(botonSumar){
-        botonSumar.addEventListener("click", (evt)=>{
-            evt.preventDefault();
-            evt.stopPropagation();
-            if(contador < stock){
-                setCounter(contador+1)
-            }
-            else if(contador == stock){
-                divContador.append("Limite de productos para comprar!")
-            }
-            else{
-                setCounter(contador);
-            }
-            //contador < stock? setCounter(contador+1): setCounter(contador);
-        });
+        botonSumar.addEventListener("click",sumar);
     }
     if(botonRestar){
         botonRestar.addEventListener("click", (evt)=>{

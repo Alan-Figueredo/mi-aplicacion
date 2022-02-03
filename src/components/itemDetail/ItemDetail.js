@@ -36,7 +36,8 @@ export const ItemDetail =()=>{
                     </div>
                 </div>
 
-                <ItemCount stock={product.stock} initial={1} />
+                <ItemCount stock={product.stock} initial={1} 
+                />
                 
                 <div className="mt-3 row">
                     <div className="col-sm-2 card-body">
