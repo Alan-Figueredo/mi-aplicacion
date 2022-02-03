@@ -6,7 +6,6 @@ export const ItemDetail =()=>{
     const fuentePrecio ={
         fontSize: "20px"
     }
-
     const { productID } = useParams();
     const [product, setProduct] =useState();
     const [isLoading, setIsLoading] =useState(false)
@@ -18,6 +17,8 @@ export const ItemDetail =()=>{
         .then((data) => setProduct(data))
         .finally(()=> setIsLoading(false))
     }, [productID]);
+
+
     if(isLoading || !product) return <p className="text-center mt-5" style={{fontSize:"30px"}}>Cargando...</p>
     return(
             <div className="shadow text-center card mt-5" style={{justifyContent:"center", marginLeft:"auto", marginRight:"auto", width:"50%"}}>
@@ -35,7 +36,7 @@ export const ItemDetail =()=>{
                     </div>
                 </div>
 
-                <ItemCount stock={product.stock} initial={1}/>
+                <ItemCount stock={product.stock} initial={1} />
                 
                 <div className="mt-3 row">
                     <div className="col-sm-2 card-body">

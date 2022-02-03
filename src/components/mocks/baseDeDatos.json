@@ -50,7 +50,7 @@
             "name": "Bacardi",
             "price": 6500,
             "description": "Botella de ron marca Bacardi",
-            "stock": 20,
+            "stock": 5,
             "category":"Ron",
             "img": "https://th.bing.com/th/id/OIP.5lEPZPzvpIwhKyQ4xbHCZgHaHa?pid=ImgDet&rs=1"
         }
