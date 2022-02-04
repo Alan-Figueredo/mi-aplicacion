@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ItemCount } from "../ItemCount";
 export const ItemDetail =()=>{
+    const [disabled, setDisabled] = useState(false);
+    const [counter, setCounter] = useState(1);
     const fuentePrecio ={
         fontSize: "20px"
     }
     const { productID } = useParams();
-    const [product, setProduct] =useState();
+    const [product, setProduct] =useState({});
     const [isLoading, setIsLoading] =useState(false)
     useEffect(()=>{
         const URL = `http://localhost:3001/productos/${productID}`;
@@ -17,7 +19,21 @@ export const ItemDetail =()=>{
         .then((data) => setProduct(data))
         .finally(()=> setIsLoading(false))
     }, [productID]);
-
+    const sumar=()=>{
+        if(counter < product.stock){
+            setCounter((prevState)=>prevState+1)
+        }else{
+            setDisabled(true)
+        }
+    }
+    const restar=()=>{
+        if(counter > 1){
+            setCounter((prevState)=>prevState-1)
+            setDisabled(false)
+        }else{
+            setCounter(counter);
+        }
+    }
 
     if(isLoading || !product) return <p className="text-center mt-5" style={{fontSize:"30px"}}>Cargando...</p>
     return(
@@ -36,9 +52,8 @@ export const ItemDetail =()=>{
                     </div>
                 </div>
 
-                <ItemCount stock={product.stock} initial={1} 
-                />
-                
+                <ItemCount  sumar={sumar} restar={restar} counter={counter} disabled={disabled}/>
+                {counter === product.stock && <div class="alert alert-danger" role="alert" style={{marginLeft:"auto", marginRight:"auto", marginTop:"10px"}}>Llegaste al limite de stock!</div>}
                 <div className="mt-3 row">
                     <div className="col-sm-2 card-body">
                     <Link to="/cart"><button className="btn btn-primary" style={{width:"auto"}}>Comprar ahora</button></Link>

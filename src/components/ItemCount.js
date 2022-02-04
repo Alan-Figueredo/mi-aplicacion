@@ -1,45 +1,16 @@
 import { useEffect, useState } from "react";
-export const ItemCount =({stock, initial})=>{
+export const ItemCount =({sumar, restar, disabled, counter})=>{
     const tamaño ={
         width:"250px",
         marginLeft: "auto",
         marginRight: "auto"
     }
-    const [contador, setCounter] = useState(initial);
-
- 
-    const sumar =()=>{ 
-        if(contador < stock){
-            setCounter(contador+1);
-        }
-        else{
-            botonSumar.disabled = true;
-            divContador.append("Llegaste al limite de productos!");
-        }
-        //contador < stock? setCounter(contador+1): setCounter(contador);
-    }
-
-    //const botonRestar = document.getElementById(restar);
-    const botonSumar = document.getElementById("sumar");
-    const botonRestar = document.getElementById("restar");
-    const divContador = document.getElementById("divContador")
-    if(botonSumar){
-        botonSumar.addEventListener("click",sumar);
-    }
-    if(botonRestar){
-        botonRestar.addEventListener("click", (evt)=>{
-            evt.preventDefault();
-            evt.stopPropagation();
-            contador > initial? setCounter(contador-1): setCounter(contador);
-        });
-    }
-
 
     return(<>
         <div className="row mb-2" style={tamaño} id="divContador">
-            <button className="btn btn-primary col-sm-2 m-auto" id="restar">-</button>
-            <p  className="text-center col-sm-2 my-auto">{contador}</p>
-            <button className="btn btn-primary col-sm-2 m-auto"  id="sumar">+</button>
+            <button className="btn btn-primary col-sm-2 m-auto" id="restar" onClick={restar}>-</button>
+            <p  className="text-center col-sm-2 my-auto">{counter}</p>
+            <button className="btn btn-primary col-sm-2 m-auto"  id="sumar" onClick={sumar} disabled={disabled}>+</button>
         </div>
         
     </>
