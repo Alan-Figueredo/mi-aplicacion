@@ -21,6 +21,7 @@ export const ItemDetail =()=>{
         .then((data) => setProduct(data))
         .finally(()=> setIsLoading(false))
     }, [productID]);
+
     const handleClick=()=>{
         addItem(product,counter);
     };
@@ -58,7 +59,7 @@ export const ItemDetail =()=>{
                 </div>
 
                 <ItemCount  sumar={sumar} restar={restar} counter={counter} setCounter={setCounter} disabled={disabled}/>
-                {counter === product.stock && <div class="alert alert-danger" role="alert" style={{marginLeft:"auto", marginRight:"auto", marginTop:"10px"}}>Llegaste al limite de stock!</div>}
+                {counter === product.stock && <div className="alert alert-danger" role="alert" style={{marginLeft:"auto", marginRight:"auto", marginTop:"10px"}}>Llegaste al limite de stock!</div>}
                 <div className="mt-3 row">
                     <div className="col-sm-2 card-body">
                     <Link to="/cart"><button className="btn btn-primary" style={{width:"auto"}}>Comprar ahora</button></Link>

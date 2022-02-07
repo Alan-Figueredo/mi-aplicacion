@@ -15,6 +15,7 @@ const Categories=()=>{
     }, []);
     if(isLoading || !products) return <p className="text-center" style={{fontSize:"30px"}}>Cargando...</p>
     return(
+        
         <>
             {products.map((product)=>(
                     <div className="col-12 text-center" key={product.id}>
