@@ -1,13 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
 import { ItemCount } from "../ItemCount";
 export const ItemDetail =()=>{
-    const [disabled, setDisabled] = useState(false);
-    const [counter, setCounter] = useState(1);
     const fuentePrecio ={
         fontSize: "20px"
     }
+    const { addItem } = useCart();
+    const [disabled, setDisabled] = useState(false);
+    const [counter, setCounter] = useState(1);
     const { productID } = useParams();
     const [product, setProduct] =useState({});
     const [isLoading, setIsLoading] =useState(false)
@@ -19,6 +21,9 @@ export const ItemDetail =()=>{
         .then((data) => setProduct(data))
         .finally(()=> setIsLoading(false))
     }, [productID]);
+    const handleClick=()=>{
+        addItem(product,counter);
+    };
     const sumar=()=>{
         if(counter < product.stock){
             setCounter((prevState)=>prevState+1)
@@ -52,7 +57,7 @@ export const ItemDetail =()=>{
                     </div>
                 </div>
 
-                <ItemCount  sumar={sumar} restar={restar} counter={counter} disabled={disabled}/>
+                <ItemCount  sumar={sumar} restar={restar} counter={counter} setCounter={setCounter} disabled={disabled}/>
                 {counter === product.stock && <div class="alert alert-danger" role="alert" style={{marginLeft:"auto", marginRight:"auto", marginTop:"10px"}}>Llegaste al limite de stock!</div>}
                 <div className="mt-3 row">
                     <div className="col-sm-2 card-body">
@@ -61,7 +66,7 @@ export const ItemDetail =()=>{
                 </div>
                 <div className="mb-3 row">
                     <div className="col-sm-2 card-body">
-                        <button className="btn" style={{backgroundColor:"rgba(65,137,230,.15)", color:"#3483fa", width:"auto"}}>Agregar al carrito</button>
+                        <button onClick={handleClick} className="btn" style={{backgroundColor:"rgba(65,137,230,.15)", color:"#3483fa", width:"auto"}}>Agregar al carrito</button>
                     </div>
                 </div>
             </div>
