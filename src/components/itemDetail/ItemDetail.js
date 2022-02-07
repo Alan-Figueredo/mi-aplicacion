@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css"
+
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
