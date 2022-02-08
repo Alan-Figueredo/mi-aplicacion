@@ -6,11 +6,21 @@ const Cart =()=>{
     return(
     <div>
         {cart.map((purchase)=>{
-                return <div key={purchase.item.id}>
-                    <p>{purchase.item.name}</p>
-                    <p>{purchase.quantity}</p>
-                    <button onClick={()=>removeItem(purchase.item.id)}>Eliminar</button>
-                    <button onClick={clearAll}></button>
+                return <div className="container">
+                    <div key={purchase.item.id} className="card text-center mt-3" style={{justifyContent:"center", marginLeft:"auto", marginRight:"auto", width:"50%"}}>
+                    <div className="row my-2 mx-2">
+                        <div className="col-4">
+                            <img src={purchase.item.img} alt={purchase.item.name} className="img-thumbnail"/>
+                        </div>
+                        <div className="col-8">
+                            <p className="mt-2">Producto: {purchase.item.name}</p>
+                            <p>Cantidad: {purchase.quantity}</p>
+                            <button className="btn btn-primary mt-5 mx-3" >Comprar</button>
+                            <button className="btn btn-primary mt-5" onClick={()=>removeItem(purchase.item.id)}>Eliminar</button>
+                        </div>
+                    </div>
+                    </div>
+                    <button className="btn mx-3" style={{backgroundColor:"rgba(65,137,230,.15)", color:"#3483fa", width:"auto", float:"right"}} onClick={clearAll}>Eliminar todos</button>
                 </div>
             })}
     </div>

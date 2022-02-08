@@ -8,30 +8,33 @@ import { ItemDetail } from "./components/itemDetail/ItemDetail";
 import NotFoundPage from "./components/NotFoundPage";
 import Categories from "./components/Categories";
 import Cart from "./components/Cart/Cart";
+import { CartProvider } from "./context/CartContext";
 
 
 function App() {
   return (
-    <Router>
-      <NavBar/>
-      <Routes>
-        <Route path="/">
-          <Route index element={<ItemListContainer/>}/>
-            <Route path="productos">
-              <Route index element={<ItemDetailContainer/>} />
-              <Route path=":productID" element={<ItemDetail/>} />
-            </Route>
-          <Route/>
-          <Route index element={<Categories/>}/>
-            <Route path="categories">
-              <Route index element={<Categories/>} />
-            </Route>
-          <Route/>
-          <Route path="cart" element={<Cart/>} />
-          <Route path='*' element={<NotFoundPage/>} />
-        </Route>
-      </Routes>
-    </Router>
+    <CartProvider>
+      <Router>
+        <NavBar/>
+        <Routes>
+          <Route path="/">
+            <Route index element={<ItemListContainer/>}/>
+              <Route path="productos">
+                <Route index element={<ItemDetailContainer/>} />
+                <Route path=":productID" element={<ItemDetail/>} />
+              </Route>
+            <Route/>
+            <Route index element={<Categories/>}/>
+              <Route path="categories">
+                <Route index element={<Categories/>} />
+              </Route>
+            <Route/>
+            <Route path="cart" element={<Cart/>} />
+            <Route path='*' element={<NotFoundPage/>} />
+          </Route>
+        </Routes>
+      </Router>
+    </CartProvider>
   );
 }
 
