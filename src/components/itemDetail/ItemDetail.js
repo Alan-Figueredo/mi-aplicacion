@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
+import { getFirestore } from "../../firebase";
 import { ItemCount } from "../ItemCount";
 export const ItemDetail =()=>{
     const fuentePrecio ={
@@ -15,6 +16,12 @@ export const ItemDetail =()=>{
     const [product, setProduct] =useState({});
     const [isLoading, setIsLoading] =useState(false)
     useEffect(()=>{
+        //const db = getFirestore() 
+        //const productCollection = db.collection("productos");
+        // const getDataFromFirestore = async ()=>{
+        //const response = await productCollection.get();
+        //}
+
         const URL = `http://localhost:3001/productos/${productID}`;
         setIsLoading(true)
         fetch(URL)
