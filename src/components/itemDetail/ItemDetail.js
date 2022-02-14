@@ -16,18 +16,18 @@ export const ItemDetail =()=>{
     const [product, setProduct] =useState({});
     const [isLoading, setIsLoading] =useState(false)
     useEffect(()=>{
-        //const db = getFirestore() 
-        //const productCollection = db.collection("productos");
-        // const getDataFromFirestore = async ()=>{
-        //const response = await productCollection.get();
-        //}
+        const db = getFirestore() 
+        const productCollection = db.collection("productos");
+        const selectedProduct = productCollection.doc(productID);
 
-        const URL = `http://localhost:3001/productos/${productID}`;
-        setIsLoading(true)
-        fetch(URL)
-        .then((res) => res.json())
-        .then((data) => setProduct(data))
-        .finally(()=> setIsLoading(false))
+        setIsLoading(true);
+        selectedProduct
+            .get()
+            .then((response)=> {
+            if(!response.exists) console.log("el producto no existe");
+            setProduct({...response.data(), id: response.id})
+        })
+        .finally(()=> setIsLoading(false)); 
     }, [productID]);
 
     const handleClick=()=>{

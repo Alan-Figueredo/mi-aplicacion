@@ -24,10 +24,10 @@ function NavBar(){
                     <Link to="/" style={vinculo}>Inicio</Link>
                 </div>
                 <div className="col mt-2">
-                    <Link to="/categories" style={vinculo}>Categorias</Link>
+                    <Link to="/category/1" style={vinculo}>Cervezas</Link>
                 </div>
                 <div className="col mt-2">
-                    <Link to="" style={vinculo}>Sobre nosotros</Link>
+                    <Link to="/category/2" style={vinculo}>prueba</Link>
                 </div>
                 <div className="col mt-2">
                     <Link to="" style={vinculo}>login</Link>

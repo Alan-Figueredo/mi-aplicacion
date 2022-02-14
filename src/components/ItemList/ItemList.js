@@ -16,13 +16,6 @@ function ItemList (){
             setData(response.docs.map((doc)=> ({...doc.data(), id: doc.id})));
         }
         getDataFromFirestore();
-        //const URL = "http://localhost:3001/productos"
-        //setIsLoading(true)
-        //fetch(URL)
-        //.then((response)=> response.json())
-        //.then((json) =>setProducts(json))
-        //.catch((error)=> {console.error(error)})
-        //.finally(()=> setIsLoading(false))
     }, []);
     return(
         <div className="row">

@@ -25,7 +25,7 @@ function App() {
               </Route>
             <Route/>
             <Route index element={<Categories/>}/>
-              <Route path="categories">
+              <Route path="category/:categoryID">
                 <Route index element={<Categories/>} />
               </Route>
             <Route/>
