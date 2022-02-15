@@ -27,7 +27,7 @@ function NavBar(){
                     <Link to="/category/1" style={vinculo}>Cervezas</Link>
                 </div>
                 <div className="col mt-2">
-                    <Link to="/category/2" style={vinculo}>prueba</Link>
+                    <Link to="/category/2" style={vinculo}>Ron</Link>
                 </div>
                 <div className="col mt-2">
                     <Link to="" style={vinculo}>login</Link>
