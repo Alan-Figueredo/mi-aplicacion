@@ -39,7 +39,7 @@ const Categories=()=>{
             <div className="row">
                 {data.map((product)=> 
                 <div className="col-3">
-                    {product.category}
+                    <Item key={product.key} product={product} />
                 </div>
                 )}
             </div>
