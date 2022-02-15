@@ -1,11 +1,11 @@
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { getFirestore } from "../firebase";
+import { getFirestore } from "../firebase/index";
 import { Item } from "./Item/Item";
 
 const Categories=()=>{
-    const [products, setProducts] =useState();
+    const [data, setData] =useState([]);
     const [isLoading, setIsLoading] =useState(false)
     const { categoryID } = useParams();
     useEffect(()=>{
@@ -24,7 +24,7 @@ const Categories=()=>{
             try{
                 const response = await productsCollection.get();
                 if(response.empty) console.log("No hay productos");
-                setProducts(response.docs.map((doc)=> ({...doc.products(), id: doc.id})));
+                setData(response.docs.map((doc)=> ({...doc.data(), id: doc.id})));
             }finally{
                 setIsLoading(false)
             }
@@ -36,9 +36,12 @@ const Categories=()=>{
         return <p>Cargando los productos...</p>
     }else{
         return(
-            <div>
-                {products.map((product)=>{ <Item product={product} />
-                })}
+            <div className="row">
+                {data.map((product)=> 
+                <div className="col-3">
+                    {product.category}
+                </div>
+                )}
             </div>
         )
     }
