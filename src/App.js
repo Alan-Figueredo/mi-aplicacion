@@ -31,7 +31,7 @@ function App() {
               </Route>
               
             <Route/>
-            <Route path="thanks/:orderID" element={<ThankYouPage/>} />
+            <Route path="thanks/:orderId" element={<ThankYouPage/>} />
             <Route path="cart" element={<Cart/>} />
             <Route path='*' element={<NotFoundPage/>} />
           </Route>

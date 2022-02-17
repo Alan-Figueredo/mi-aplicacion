@@ -31,7 +31,8 @@ const Cart =()=>{
             total: getTotal(cart)
         };
         const db = getFirestore();
-        db.collection("orders").add(newOrder)
+        db.collection("orders")
+        .add(newOrder)
         .then((res)=> {
             console.log("compra realizada correctamente", res.id);
             navigate(`/thanks/${res.id}`)
