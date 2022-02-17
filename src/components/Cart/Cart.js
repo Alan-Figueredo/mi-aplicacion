@@ -1,24 +1,15 @@
 import * as React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
+import { getFirestore } from "../../firebase";
 
 const Cart =()=>{
     const { cart, removeItem, clearAll } = useCart();
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("")
+    let navigate = useNavigate();
 
-    const handleSubmit = (evt)=>{
-        evt.preventDefault()
-
-        const newOrder = { 
-            buyer: {
-                name, 
-                phone
-            },
-            items: cart,
-            total:getTotal(cart)}
-    }
     const getTotal = (cart) =>{
         let total = 0;
         cart.forEach((element) => {
@@ -26,6 +17,28 @@ const Cart =()=>{
         });
         return total;
     }
+
+    const handleSubmit = (evt)=>{
+        evt.preventDefault()
+
+        if(!name || !phone){
+            console.log("Crea los datos!");
+            return false;
+        }
+        const newOrder = { 
+            buyer: {name, phone},
+            items: cart,
+            total: getTotal(cart)
+        };
+        const db = getFirestore();
+        db.collection("orders").add(newOrder)
+        .then((res)=> {
+            console.log("compra realizada correctamente", res.id);
+            navigate(`/thanks/${res.id}`)
+        })
+        .catch((err) => console.log(err))
+    }
+
 
     return(
         <div>

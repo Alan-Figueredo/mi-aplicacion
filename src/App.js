@@ -9,9 +9,10 @@ import NotFoundPage from "./components/NotFoundPage";
 import Categories from "./components/Categories";
 import Cart from "./components/Cart/Cart";
 import { CartProvider } from "./context/CartContext";
-
+import ThankYouPage from "./components/ThankYouPage";
 
 function App() {
+  
   return (
     <CartProvider>
       <Router>
@@ -28,7 +29,9 @@ function App() {
               <Route path="category/:categoryID">
                 <Route index element={<Categories/>} />
               </Route>
+              
             <Route/>
+            <Route path="thanks/:orderID" element={<ThankYouPage/>} />
             <Route path="cart" element={<Cart/>} />
             <Route path='*' element={<NotFoundPage/>} />
           </Route>
