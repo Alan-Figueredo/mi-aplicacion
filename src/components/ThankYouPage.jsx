@@ -14,11 +14,13 @@ const ThankYouPage =()=>{
         .get()
         .then((res)=> setOrder({ id: res.id, ...res.data() }))
     }, [orderId])    
+    console.log(order.buyer.name)
+
     return (
         <div>
             <h1>Gracias por tu compra !</h1>
             <h2>Detalle de su compra:</h2>
-            <p>{order.items[0].item.name}</p>
+            <p>{}</p>
         </div>
     )
 }
