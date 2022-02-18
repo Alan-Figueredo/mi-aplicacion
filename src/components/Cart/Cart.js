@@ -23,6 +23,9 @@ const Cart =()=>{
 
         if(!name || !phone){
             console.log("Crea los datos!");
+            if(cart[0] == null){
+                return false;
+            }
             return false;
         }
         const newOrder = { 
@@ -57,14 +60,13 @@ const Cart =()=>{
                                     <p className="mt-2">Producto: {purchase.item.name}</p>
                                     <p>Cantidad: {purchase.quantity}</p>
                                     <p>Precio: ${parseInt(purchase.quantity * purchase.item.price)}</p>
-                                    <button className="btn btn-primary mt-3 mx-3" >Comprar</button>
                                     <button className="btn btn-primary mt-3" onClick={()=>removeItem(purchase.item.id)}>Eliminar</button>
                                 </div>
                             </div>
                             </div>
                         </div>
                     )})}
-                    {cart[0] != null && <h3>Total: $ {/*getTotal()*/}</h3>}
+                    {cart[0] != null && <h3>Total: $ {getTotal(cart)}</h3>}
                     {cart[0] != null && <button className="btn mt-5" style={{backgroundColor:"rgba(65,137,230,.15)", color:"#3483fa", width:"auto", float:"right"}} onClick={clearAll}>Eliminar todos</button>}
             </div>
             <div className="card mt-3" style={{width:"95rem", marginLeft:"auto", marginRight:"auto"}}>
