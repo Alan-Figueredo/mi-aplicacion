@@ -36,7 +36,6 @@ const Cart =()=>{
         db.collection("orders")
         .add(newOrder)
         .then((res)=> {
-            console.log("compra realizada correctamente", res.id);
             navigate(`/thanks/${res.id}`)
         })
         .catch((err) => console.log(err))
