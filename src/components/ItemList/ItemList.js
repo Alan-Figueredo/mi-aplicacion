@@ -20,7 +20,7 @@ function ItemList (){
     return(
         <div className="row">
             {isLoading? (<p className="text-center">Cargando...</p>): (data.map((product)=>(
-                    <div className="col-3" key={product.id}>
+                    <div className="col-12 col-sm-3" key={product.id}>
                         <Item key={product.id} product={product} id={product.id}/>
                     </div>
             )))}

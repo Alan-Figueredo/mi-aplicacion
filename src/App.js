@@ -10,34 +10,36 @@ import Categories from "./components/Categories";
 import Cart from "./components/Cart/Cart";
 import { CartProvider } from "./context/CartContext";
 import ThankYouPage from "./components/ThankYouPage";
+import { AgeProvider } from "./context/AgeContext";
 
 function App() {
-  
   return (
-    <CartProvider>
-      <Router>
-        <NavBar/>
-        <Routes>
-          <Route path="/">
-            <Route index element={<ItemListContainer/>}/>
-              <Route path="productos">
-                <Route index element={<ItemDetailContainer/>} />
-                <Route path=":productID" element={<ItemDetail/>} />
-              </Route>
-            <Route/>
-            <Route index element={<Categories/>}/>
-              <Route path="category/:categoryID">
-                <Route index element={<Categories/>} />
-              </Route>
-              
-            <Route/>
-            <Route path="thanks/:orderId" element={<ThankYouPage/>} />
-            <Route path="cart" element={<Cart/>} />
-            <Route path='*' element={<NotFoundPage/>} />
-          </Route>
-        </Routes>
-      </Router>
-    </CartProvider>
+    <AgeProvider>
+      <CartProvider>
+        <Router>
+          <NavBar/>
+          <Routes>
+            <Route path="/">
+              <Route index element={<ItemListContainer/>}/>
+                <Route path="productos">
+                  <Route index element={<ItemDetailContainer/>} />
+                  <Route path=":productID" element={<ItemDetail/>} />
+                </Route>
+              <Route/>
+              <Route index element={<Categories/>}/>
+                <Route path="category/:categoryID">
+                  <Route index element={<Categories/>} />
+                </Route>
+                
+              <Route/>
+              <Route path="thanks/:orderId" element={<ThankYouPage/>} />
+              <Route path="cart" element={<Cart/>} />
+              <Route path='*' element={<NotFoundPage/>} />
+            </Route>
+          </Routes>
+        </Router>
+      </CartProvider>
+    </AgeProvider>
   );
 }
 
