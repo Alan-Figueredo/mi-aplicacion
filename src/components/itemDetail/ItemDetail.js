@@ -50,7 +50,7 @@ export const ItemDetail =()=>{
 
     if(isLoading || !product) return <p className="text-center mt-5" style={{fontSize:"30px"}}>Cargando...</p>
     return(
-            <div className="shadow text-center card mt-5" style={{justifyContent:"center", marginLeft:"auto", marginRight:"auto", width:"50%"}}>
+            <div className="shadow text-center card mt-5" style={{justifyContent:"center", marginLeft:"auto", marginRight:"auto", width:"50%", display:"flex", flexDirection:"column", minHeight:"70vh"}}>
                 <div className="card-body row">
                     <div className="col-sm-7">
                         <img className="img-fluid img-thumbnail" src={product.img} alt={product.name}/>

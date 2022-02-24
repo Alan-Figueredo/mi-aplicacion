@@ -36,13 +36,16 @@ const Categories=()=>{
         return <p>Cargando los productos...</p>
     }else{
         return(
-            <div className="row">
-                {data.map((product)=> 
-                <div className="col-3">
-                    <Item key={product.key} product={product} />
+            <div className="container" style={{display:"flex", flexDirection:"column", minHeight:"70vh"}}>
+                <div className="row">
+                    {data.map((product)=> 
+                    <div className="col-4">
+                        <Item key={product.key} product={product}/>
+                    </div>
+                    )}
                 </div>
-                )}
             </div>
+            
         )
     }
     

@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Item } from "../Item/Item.js";
 import { getFirestore } from "../../firebase/index.js";
+import { EtiquetaCerveza } from "../EtiquetaCerveza.js";
+import { EtiquetaRon } from "../EtiquetaRon.js";
 
 
 function ItemList (){
@@ -18,13 +20,20 @@ function ItemList (){
         getDataFromFirestore();
     }, []);
     return(
-        <div className="row">
-            {isLoading? (<p className="text-center">Cargando...</p>): (data.map((product)=>(
-                    <div className="col-12 col-sm-3" key={product.id}>
-                        <Item key={product.id} product={product} id={product.id}/>
-                    </div>
-            )))}
-            
+        <div>
+            <div className="row mx-5 mt-5">
+                <p style={{fontSize:"26px", color:"#666"}}>Ofertas</p>
+                <EtiquetaCerveza/>
+                <EtiquetaRon/>
+            </div>
+            <div className="row mx-5 mt-3 mb-3">
+                <p style={{fontSize:"26px", color:"#666"}}>Productos</p>
+                {isLoading? (<p className="text-center">Cargando...</p>): (data.map((product)=>(
+                        <div className="col-12 col-sm-3" key={product.id}>
+                            <Item key={product.id} product={product} id={product.id}/>
+                        </div>
+                )))}
+            </div>
         </div>
     )
 }

@@ -11,6 +11,7 @@ import Cart from "./components/Cart/Cart";
 import { CartProvider } from "./context/CartContext";
 import ThankYouPage from "./components/ThankYouPage";
 import { AgeProvider } from "./context/AgeContext";
+import { Footer } from "./components/Footer";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
               <Route path='*' element={<NotFoundPage/>} />
             </Route>
           </Routes>
+          <Footer/>
         </Router>
       </CartProvider>
     </AgeProvider>
