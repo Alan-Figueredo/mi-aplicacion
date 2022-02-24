@@ -9,7 +9,7 @@ const ItemListContainer =()=>{
     const {hidden, setHidden} = useAge();
     return(
         <div className="container" style={{display:"flex", flexDirection:"column", minHeight:"70vh"}}>
-            <div className="card mt-5" style={{width:"80%", margin:"0 auto"}} hidden={hidden}>
+            <div className="card mt-5" style={{width:"90%", margin:"0 auto"}} hidden={hidden}>
                 <h2 className="mt-3">Para ingresar a la pagina debes ser mayor de 18</h2>
                 <p className="mb-5" style={{fontSize:"25px"}}>¿Eres mayor a 18?</p>
                 <button className="mb-2 btn btn-primary" onClick={

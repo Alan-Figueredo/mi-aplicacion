@@ -16,7 +16,7 @@ function NavBar(){
         textDecorationLine: "none",
     }
     return(
-        <div className="flexbox py-3" style={navBarStyle}>
+        <div className="py-3" style={navBarStyle}>
             <div className="row">
                 <div className="col-12 col-sm text-center mx-5">
                     <Link to="/" style={{textDecoration:"none"}}><h1 style={nombreH1} >TusBebidasOnline</h1></Link>
