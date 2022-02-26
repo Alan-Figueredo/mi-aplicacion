@@ -26,7 +26,7 @@ export const Footer =()=>{
                 </div>
                 <div className="row">
                     <div className="col">
-                        <p className="text-center">© 2022 Copyright TusBebidasOnline</p>
+                        <p className="text-center">©2022 Copyright TusBebidasOnline</p>
                     </div>
                 </div>
             </footer>

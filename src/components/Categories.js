@@ -23,7 +23,6 @@ const Categories=()=>{
             setIsLoading(true);
             try{
                 const response = await productsCollection.get();
-                if(response.empty) console.log("No hay productos");
                 setData(response.docs.map((doc)=> ({...doc.data(), id: doc.id})));
             }finally{
                 setIsLoading(false)
@@ -33,7 +32,7 @@ const Categories=()=>{
         getDataFromFirestore();
     }, [categoryID]);
     if(isLoading){
-        return <p>Cargando los productos...</p>
+        return <p className="text-center" style={{fontSize:"20px", marginTop:"17%", marginBottom:"18%"}}>Cargando los productos...</p>
     }else{
         return(
             <div className="container" style={{display:"flex", flexDirection:"column", minHeight:"70vh"}}>

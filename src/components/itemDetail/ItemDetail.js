@@ -48,7 +48,7 @@ export const ItemDetail =()=>{
         }
     }
 
-    if(isLoading || !product) return <p className="text-center mt-5" style={{fontSize:"30px"}}>Cargando...</p>
+    if(isLoading || !product) return <p className="text-center" style={{fontSize:"20px", marginTop:"17%", marginBottom:"18%"}}>Cargando los productos...</p>
     return(
             <div className="shadow text-center card mt-5" style={{justifyContent:"center", marginLeft:"auto", marginRight:"auto", width:"50%", display:"flex", flexDirection:"column", minHeight:"70vh"}}>
                 <div className="card-body row">

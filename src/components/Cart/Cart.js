@@ -24,7 +24,7 @@ const Cart =()=>{
                         return (
                         <div className="mx-2" key={purchase.item.id}>
                             
-                            <div  className=" text-center mt-3" style={{justifyContent:"center", width:"90%", height:"50%"}}>
+                            <div  className=" text-center mt-3" style={{justifyContent:"center", width:"85%", height:"50%"}}>
                             <div className="row my-2 mx-2">
                                 <div className="col-2">
                                     <img src={purchase.item.img} alt={purchase.item.name} className="img-thumbnail"/>
@@ -41,6 +41,7 @@ const Cart =()=>{
                         </div>
                     )})}
                     {cart[0] != null && <h3 style={{textAlign:"right", marginRight:"10px"}}>Total ${getTotal(cart)}</h3>}
+
                     {cart[0] != null && <button className="btn mt-5" style={{backgroundColor:"rgba(65,137,230,.15)", color:"#3483fa", width:"auto", float:"right"}} onClick={clearAll}>Eliminar todos</button>}
             </div>
 

@@ -8,7 +8,14 @@ import { getFirestore } from "../firebase";
 const ThankYouPage =()=>{
     const { orderId } = useParams()
     const [order, setOrder] = useState({})
-    const { cart } = useCart()
+    const { cart, clearAll } = useCart()
+    const getTotal = (cart) =>{
+        let total = 0;
+        cart.forEach((element) => {
+            total += element.item.price * element.quantity;
+        });
+        return total;
+    }
     useEffect(()=>{
         const db = getFirestore();
         db.collection("orders")
@@ -19,12 +26,12 @@ const ThankYouPage =()=>{
 
     return (
         <div className="card text-center mt-5" style={{justifyContent:"center", marginLeft:"auto", marginRight:"auto", width:"80%"}}>
-            <h2>Gracias por tu compra {order?.buyer?.name}! </h2>
+            <h2>¡Gracias por tu compra {order?.buyer?.name}! </h2>
             <h3>Detalle de su compra:</h3>
             {cart.map((purchase)=>{
                         return (
                         <div className="mx-2" key={purchase.item.id}>
-                            <div  className=" text-center mt-3" style={{justifyContent:"center", width:"90%", height:"50%"}}>
+                            <div  className=" text-center mt-3" style={{justifyContent:"center", width:"86%", height:"50%"}}>
                             <div className="row my-2 mx-2">
                                 <div className="col-2">
                                     <img src={purchase.item.img} alt={purchase.item.name} className="img-thumbnail"/>
@@ -38,7 +45,8 @@ const ThankYouPage =()=>{
                             </div>
                         </div>
                     )})}
-            <Link to="/"><button className="btn btn-primary mt-3 mb-4">Volver a la tienda</button></Link>
+                <h3 className="my-3">Total ${getTotal(cart)}</h3>
+            <Link to="/"><button className="btn btn-primary mt-3 mb-4" onClick={()=>{clearAll()}}>Volver a la tienda</button></Link>
         </div>
     )
 }

@@ -11,6 +11,7 @@ function ItemList (){
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true)
         const db = getFirestore() 
         const productsCollection = db.collection("productos");
         const getDataFromFirestore = async ()=>{
@@ -18,23 +19,29 @@ function ItemList (){
             setData(response.docs.map((doc)=> ({...doc.data(), id: doc.id})));
         }
         getDataFromFirestore();
+        setIsLoading(false)
     }, []);
-    return(
-        <div>
-            <div className="row mx-5 mt-5">
-                <p style={{fontSize:"26px", color:"#666"}}>Ofertas</p>
-                <EtiquetaCerveza/>
-                <EtiquetaRon/>
+    if(isLoading){
+        return <p className="text-center" style={{fontSize:"20px", marginTop:"17%", marginBottom:"18%"}}>Cargando los productos...</p>
+    }else{
+        return(
+            <div>
+                <div className="row mx-5 mt-5">
+                    <p style={{fontSize:"26px", color:"#666"}}>Ofertas</p>
+                    <EtiquetaCerveza/>
+                    <EtiquetaRon/>
+                </div>
+                
+                <div className="row mx-5 mt-3 mb-3">
+                    <p style={{fontSize:"26px", color:"#666"}}>Productos</p>
+                    { (data.map((product)=>(
+                            <div className="col-12 col-sm-3" key={product.id}>
+                                <Item key={product.id} product={product} id={product.id}/>
+                            </div>
+                    )))}
+                </div>
             </div>
-            <div className="row mx-5 mt-3 mb-3">
-                <p style={{fontSize:"26px", color:"#666"}}>Productos</p>
-                {isLoading? (<p className="text-center">Cargando...</p>): (data.map((product)=>(
-                        <div className="col-12 col-sm-3" key={product.id}>
-                            <Item key={product.id} product={product} id={product.id}/>
-                        </div>
-                )))}
-            </div>
-        </div>
-    )
+        )
+    }
 }
 export default ItemList;
