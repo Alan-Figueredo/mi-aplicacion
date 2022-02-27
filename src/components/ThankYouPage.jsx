@@ -25,16 +25,16 @@ const ThankYouPage =()=>{
     }, [orderId])    
 
     return (
-        <div className="card text-center mt-5" style={{justifyContent:"center", marginLeft:"auto", marginRight:"auto", width:"80%"}}>
-            <h2>¡Gracias por tu compra {order?.buyer?.name}! </h2>
+        <div className="card text-center my-5" style={{justifyContent:"center", marginLeft:"auto", marginRight:"auto", width:"80%"}}>
+            <h2 className="mt-3">¡Gracias por tu compra {order?.buyer?.name}! </h2>
             <h3>Detalle de su compra:</h3>
             {cart.map((purchase)=>{
                         return (
                         <div className="mx-2" key={purchase.item.id}>
-                            <div  className=" text-center mt-3" style={{justifyContent:"center", width:"86%", height:"50%"}}>
+                            <div  className=" text-center mt-3" style={{justifyContent:"center", width:"86%"}}>
                             <div className="row my-2 mx-2">
                                 <div className="col-2">
-                                    <img src={purchase.item.img} alt={purchase.item.name} className="img-thumbnail"/>
+                                    <img src={purchase.item.img} alt={purchase.item.name} className="img-fluid"/>
                                 </div>
                                 <div className="col-10">
                                     <p className="mt-2">Producto: {purchase.item.name}</p>
