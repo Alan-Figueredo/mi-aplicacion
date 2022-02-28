@@ -5,7 +5,6 @@ import UserData from "../UserData";
 import "../Cart/Cart.css"
 const Cart =()=>{
     const { cart, removeItem, clearAll } = useCart();
-
     const getTotal = (cart) =>{
         let total = 0;
         cart.forEach((element) => {
@@ -13,8 +12,6 @@ const Cart =()=>{
         });
         return total;
     }
-
-
     return(
         <div id="Container">
             <div className="card mt-3" id="CardContainer">
@@ -46,8 +43,6 @@ const Cart =()=>{
             {cart[0] != null && <UserData/>
             } 
         </div>
-    
-
     )
 }
 export default Cart;
