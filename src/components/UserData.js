@@ -28,6 +28,7 @@ const UserData = ()=>{
             items: cart,
             total: getTotal(cart)
         };
+        
         const db = getFirestore();
         db.collection("orders")
         .add(newOrder)
@@ -35,6 +36,7 @@ const UserData = ()=>{
             navigate(`/thanks/${res.id}`)
         })
         .catch((err) => console.log(err))
+        clearAll();
     }
     return(
     <div className="card mt-3 mb-5" style={{width:"95rem", marginLeft:"auto", marginRight:"auto"}}>

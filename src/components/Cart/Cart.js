@@ -1,9 +1,8 @@
 import * as React from "react";
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import UserData from "../UserData";
-
+import "../Cart/Cart.css"
 const Cart =()=>{
     const { cart, removeItem, clearAll } = useCart();
 
@@ -40,9 +39,9 @@ const Cart =()=>{
                             <hr/>
                         </div>
                     )})}
-                    {cart[0] != null && <h3 style={{textAlign:"right", marginRight:"10px"}}>Total ${getTotal(cart)}</h3>}
+                    {cart[0] != null && <h3 id="Total">Total ${getTotal(cart)}</h3>}
 
-                    {cart[0] != null && <button className="btn mt-5" style={{backgroundColor:"rgba(65,137,230,.15)", color:"#3483fa", width:"auto", float:"right"}} onClick={clearAll}>Eliminar todos</button>}
+                    {cart[0] != null && <button className="btn mt-5" id="eliminarTodosButton" onClick={clearAll}>Eliminar todos</button>}
             </div>
 
             {cart[0] != null && <UserData/>

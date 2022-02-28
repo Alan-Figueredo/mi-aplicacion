@@ -9,13 +9,7 @@ const ThankYouPage =()=>{
     const { orderId } = useParams()
     const [order, setOrder] = useState({})
     const { cart, clearAll } = useCart()
-    const getTotal = (cart) =>{
-        let total = 0;
-        cart.forEach((element) => {
-            total += element.item.price * element.quantity;
-        });
-        return total;
-    }
+
     useEffect(()=>{
         const db = getFirestore();
         db.collection("orders")
@@ -28,7 +22,7 @@ const ThankYouPage =()=>{
         <div className="card text-center my-5" style={{justifyContent:"center", marginLeft:"auto", marginRight:"auto", width:"80%"}}>
             <h2 className="mt-3">¡Gracias por tu compra {order?.buyer?.name}! </h2>
             <h3>Detalle de su compra:</h3>
-            {cart.map((purchase)=>{
+            {order?.items?.map((purchase)=>{
                         return (
                         <div className="mx-2" key={purchase.item.id}>
                             <div  className=" text-center mt-3" style={{justifyContent:"center", width:"86%"}}>
@@ -45,8 +39,8 @@ const ThankYouPage =()=>{
                             </div>
                         </div>
                     )})}
-                <h3 className="my-3">Total ${getTotal(cart)}</h3>
-            <Link to="/"><button className="btn btn-primary mt-3 mb-4" onClick={()=>{clearAll()}}>Volver a la tienda</button></Link>
+                <h3 className="my-3">Total ${order.total}</h3>
+            <Link to="/"><button className="btn btn-primary mt-3 mb-4" >Volver a la tienda</button></Link>
         </div>
     )
 }

@@ -1,0 +1,10 @@
+#eliminarTodosButton{
+    background-color: "rgba(65,137,230,.15)";
+    color: "#3483fa";
+    width:"auto";
+    float:"right"
+}
+#Total{
+    text-align: "right";
+    margin-right: "10px";
+}
