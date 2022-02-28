@@ -16,14 +16,13 @@ const Cart =()=>{
 
 
     return(
-        <div style={{display:"flex", flexDirection:"column", minHeight:"70vh"}}>
-            <div className="card mt-3" style={{width:"95rem", marginLeft:"auto", marginRight:"auto"}} >
+        <div id="Container">
+            <div className="card mt-3" id="CardContainer">
                 {cart[0] == null && <div className="my-5"><h2>Ups! Parece que no tenes nada en el carrito.</h2><p>¡Volve a la tienda para encontrar los productos que necesitas!</p><Link to="/"><button className="btn btn-primary mt-3">Volver a la tienda</button></Link></div>}
                 {cart.map((purchase)=>{
                         return (
                         <div className="mx-2" key={purchase.item.id}>
-                            
-                            <div  className=" text-center mt-3" style={{justifyContent:"center", width:"85%", height:"50%"}}>
+                            <div  className=" text-center mt-3" id="productos">
                             <div className="row my-2 mx-2">
                                 <div className="col-2">
                                     <img src={purchase.item.img} alt={purchase.item.name} className="img-thumbnail"/>
