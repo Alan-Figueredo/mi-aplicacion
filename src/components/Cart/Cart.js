@@ -14,8 +14,8 @@ const Cart =()=>{
     }
     return(
         <div id="Container">
-            <div className="card mt-3" id="CardContainer">
-                {cart[0] == null && <div className="my-5"><h2>Ups! Parece que no tenes nada en el carrito.</h2><p>¡Volve a la tienda para encontrar los productos que necesitas!</p><Link to="/"><button className="btn btn-primary mt-3">Volver a la tienda</button></Link></div>}
+            <div className="card mt-3" style={{width:"95rem", marginLeft:"auto", marginRight:"auto"}}>
+                {cart[0] == null && <div className="my-5 text-center"><h2>Ups! Parece que no tenes nada en el carrito.</h2><p>¡Volve a la tienda para encontrar los productos que necesitas!</p><Link to="/"><button className="btn btn-primary mt-3">Volver a la tienda</button></Link></div>}
                 {cart.map((purchase)=>{
                         return (
                         <div className="mx-2" key={purchase.item.id}>
@@ -37,7 +37,7 @@ const Cart =()=>{
                     )})}
                     {cart[0] != null && <h3 id="Total">Total ${getTotal(cart)}</h3>}
 
-                    {cart[0] != null && <button className="btn mt-5" id="eliminarTodosButton" onClick={clearAll}>Eliminar todos</button>}
+                    {cart[0] != null && <button className="mt-5" id="eliminarTodosButton" onClick={clearAll}>Eliminar todos</button>}
             </div>
 
             {cart[0] != null && <UserData/>

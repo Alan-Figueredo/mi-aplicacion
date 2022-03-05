@@ -3,18 +3,42 @@ import CartWidget from "./CartWidget/CartWidget.js";
 import Cart from "../images/Cart.png"
 import { Link, NavLink } from "react-router-dom";
 import "../components/NavBar.css"
+import { Dropdown } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { getFirestore } from "../firebase/index";
+
+
 function NavBar(){
+    const [data, setData] = useState([])
+
     let nombreH1={
         color: "white",
         fontSize: "30px"
     }
     let navBarStyle = {
-        backgroundColor: "grey"
+        backgroundColor: "grey",
+        border:"none"
     }
     let vinculo={
         color: "white",
         textDecorationLine: "none",
     }
+
+    const [dropdown, setDropdown] = useState(false);
+
+    const abriCerrarDrop = ()=>{
+        setDropdown(!dropdown)
+    }
+
+    useEffect(() => {
+        const db = getFirestore() 
+        const productsCollection = db.collection("productos");
+        const getDataFromFirestore = async ()=>{
+            const response = await productsCollection.get();
+            setData(response.docs.map((doc)=> ({...doc.data(), id: doc.id})));
+        }
+        getDataFromFirestore();
+    }, []);
     return(
         <div className="py-3" style={navBarStyle}>
             <div className="row">
@@ -24,14 +48,22 @@ function NavBar(){
                 <div className="col  mt-2">
                     <NavLink to="/" style={vinculo}>Inicio</NavLink>
                 </div>
+                <Dropdown isOpen={dropdown} toggle={abriCerrarDrop} className="col-sm my-auto" >
+                        <Dropdown.Toggle  style={navBarStyle} >
+                            <span style={vinculo}>Categorias</span>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                        {data.map((product)=>(
+                            <Dropdown.Item>
+                                <NavLink to={"category/"+product.categoryID} style={{textDecoration:"none", color:"black"}} >{product.category}</NavLink>
+                            </Dropdown.Item>
+                           )
+                        )}
+
+                        </Dropdown.Menu>
+                </Dropdown>
                 <div className="col mt-2">
-                    <NavLink to="/category/1" style={vinculo} >Cervezas</NavLink>
-                </div>
-                <div className="col mt-2">
-                    <NavLink to="/category/2" style={vinculo} >Ron</NavLink>
-                </div>
-                <div className="col mt-2">
-                    <NavLink to="" style={vinculo}  >login</NavLink>
+                    <NavLink to="/aboutUs" style={vinculo}  >Sobre Nosotros</NavLink>
                 </div>
                 <div className="col">
                     <Link to="/cart"><CartWidget Cart={Cart}/></Link>

@@ -12,6 +12,7 @@ import { CartProvider } from "./context/CartContext";
 import ThankYouPage from "./components/ThankYouPage";
 import { AgeProvider } from "./context/AgeContext";
 import { Footer } from "./components/Footer";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   return (
@@ -31,8 +32,8 @@ function App() {
                 <Route path="category/:categoryID">
                   <Route index element={<Categories/>} />
                 </Route>
-                
               <Route/>
+              <Route path="aboutUs" element={<AboutUs/>}/>
               <Route path="thanks/:orderId" element={<ThankYouPage/>} />
               <Route path="cart" element={<Cart/>} />
               <Route path='*' element={<NotFoundPage/>} />
