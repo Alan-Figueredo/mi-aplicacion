@@ -27,7 +27,6 @@ const Cart =()=>{
                                 <div className="col-10">
                                     <p className="mt-2">Producto: {purchase.item.name}</p>
                                     <p>Cantidad: {purchase.quantity}</p>
-                                    {console.log(purchase.quantity)}
                                     <p>Precio: ${parseInt(purchase.quantity * purchase.item.price)}</p>
                                     <button className="btn btn-primary mt-3" onClick={()=>removeItem(purchase.item.id)}>Eliminar</button>
                                 </div>

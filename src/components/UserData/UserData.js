@@ -34,7 +34,7 @@ const UserData = ()=>{
         .then((res)=> {
             navigate(`/thanks/${res.id}`)
         })
-        .catch((err) => console.log(err))
+        //.catch((err) => console.log(err))
         clearAll();
     }
     return(

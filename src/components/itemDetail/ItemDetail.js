@@ -20,7 +20,6 @@ export const ItemDetail =()=>{
         selectedProduct
             .get()
             .then((response)=> {
-            if(!response.exists) console.log("el producto no existe");
             setProduct({...response.data(), id: response.id})
         })
         .finally(()=> setIsLoading(false)); 
