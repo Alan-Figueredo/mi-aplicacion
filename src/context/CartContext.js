@@ -18,7 +18,7 @@ export const CartProvider = ({ children })=>{
     }, [cart])
 
     const addItem = (item, quantity) => {
-        const itemEnCarrito = cart.some((compra)=> compra.item.id === item.id);
+        const itemEnCarrito = cart.find((compra)=> compra.item.id === item.id);
         if(itemEnCarrito){
             const actualizarCarrito = cart.map((compra)=>{
                 if(compra.item.id === item.id){
