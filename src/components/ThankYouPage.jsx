@@ -7,7 +7,7 @@ import { getFirestore } from "../firebase";
 
 const ThankYouPage =()=>{
     const { orderId } = useParams()
-    const [order, setOrder] = useState({})|
+    const [order, setOrder] = useState({})
 
     useEffect(()=>{
         const db = getFirestore();
