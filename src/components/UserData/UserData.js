@@ -2,13 +2,13 @@ import { useState } from "react";
 import { getFirestore } from "../../firebase";
 import { useCart } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
+import "../UserData/UserData.css"
 const UserData = ()=>{
     const { cart, clearAll } = useCart();
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
     const [hidden, setHidden] = useState(true);
     let navigate = useNavigate();
-
     const getTotal = (cart) =>{
         let total = 0;
         cart.forEach((element) => {
@@ -16,7 +16,6 @@ const UserData = ()=>{
         });
         return total;
     }
-
     const handleSubmit = (evt)=>{
         evt.preventDefault()
 
@@ -52,5 +51,4 @@ const UserData = ()=>{
         </form>
     </div>)
 }
-
 export default UserData;
