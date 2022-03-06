@@ -27,7 +27,7 @@ const ItemListContainer =()=>{
                 }
                 style={{width:"50%", margin:"0 auto"}}>no</button>
             </div>
-            {mayor === false &&  <div><p className="text-center" style={{fontSize:"25px"}}><b>¡No contas con la edad suficiente para entrar a la pagina!</b></p></div>}
+            {mayor === false &&  <div><p className="text-center" style={{fontSize:"25px", marginTop:"20%"}}><b>¡No contas con la edad suficiente para entrar a la pagina!</b></p></div>}
             {mayor === true && <ItemList/>}
             
         </div>
