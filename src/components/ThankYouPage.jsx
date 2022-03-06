@@ -7,8 +7,7 @@ import { getFirestore } from "../firebase";
 
 const ThankYouPage =()=>{
     const { orderId } = useParams()
-    const [order, setOrder] = useState({})
-    const { cart, clearAll } = useCart()
+    const [order, setOrder] = useState({})|
 
     useEffect(()=>{
         const db = getFirestore();

@@ -26,6 +26,17 @@ function NavBar(){
 
     const [dropdown, setDropdown] = useState(false);
 
+    const nombreCategorias = [];
+    data.forEach(element => {
+        nombreCategorias.push({name: element.category, id: element.categoryID});
+    });
+
+    const nombreCategoriasMap = nombreCategorias.map(elemento=>{
+        return [elemento.name, elemento]
+    })
+    const nombreCategoriasArr = new Map(nombreCategoriasMap);
+    const unicos = [...nombreCategoriasArr.values()];
+
     const abriCerrarDrop = ()=>{
         setDropdown(!dropdown)
     }
@@ -53,9 +64,9 @@ function NavBar(){
                             <span style={vinculo}>Categorias</span>
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                        {data.map((product)=>(
+                        {unicos.map((product)=>(
                             <Dropdown.Item>
-                                <NavLink to={"category/"+product.categoryID} style={{textDecoration:"none", color:"black"}} >{product.category}</NavLink>
+                                <NavLink to={"category/"+product.id} style={{textDecoration:"none", color:"black"}} >{product.name}</NavLink>
                             </Dropdown.Item>
                            )
                         )}
