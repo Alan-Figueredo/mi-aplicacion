@@ -4,7 +4,7 @@ import { Item } from "../Item/Item.js";
 import { getFirestore } from "../../firebase/index.js";
 import { EtiquetaCerveza } from "../EtiquetaCerveza.js";
 import { EtiquetaRon } from "../EtiquetaRon.js";
-
+import "../ItemList/ItemList.css"
 
 function ItemList (){
     const [data, setData] = useState([]);
@@ -22,19 +22,19 @@ function ItemList (){
         setIsLoading(false)
     }, []);
     if(isLoading){
-        return <p className="text-center" style={{fontSize:"20px", marginTop:"17%", marginBottom:"18%"}}>Cargando los productos...</p>
+        return <p className="text-center" id="loading">Cargando los productos...</p>
     }else{
         return(
             <div>
                 <div className="row mx-5 mt-5">
-                    <p style={{fontSize:"26px", color:"#666"}}>Ofertas</p>
+                    <p className="titulo">Ofertas</p>
                     <EtiquetaCerveza/>
                     <EtiquetaRon/>
                 </div>
                 
                 <div className="row mx-5 mt-3 mb-3">
-                    <p style={{fontSize:"26px", color:"#666"}}>Productos</p>
-                    { (data.map((product)=>(
+                    <p className="titulo">Productos</p>
+                    {(data.map((product)=>(
                             <div className="col-12 col-sm-3" key={product.id}>
                                 <Item key={product.id} product={product} id={product.id}/>
                             </div>
