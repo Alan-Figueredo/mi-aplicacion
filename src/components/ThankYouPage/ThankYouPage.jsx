@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getFirestore } from "../../firebase";
-
+import "../ThankYouPage/ThankYouPage.css"
 
 const ThankYouPage =()=>{
     const { orderId } = useParams()
@@ -17,7 +17,7 @@ const ThankYouPage =()=>{
     }, [orderId])    
 
     return (
-        <div className="card text-center my-5" style={{justifyContent:"center", marginLeft:"auto", marginRight:"auto", width:"80%"}}>
+        <div className="card text-center my-5" id="cardThanks" >
             <h2 className="mt-3">¡Gracias por tu compra {order?.buyer?.name}! </h2>
             <h3>Detalle de su compra:</h3>
             {order?.items?.map((purchase)=>{

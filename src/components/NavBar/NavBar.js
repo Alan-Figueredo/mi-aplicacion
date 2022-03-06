@@ -6,24 +6,10 @@ import "../../components/NavBar/NavBar.css"
 import { Dropdown } from "react-bootstrap";
 import { useEffect, useState } from "react";
 import { getFirestore } from "../../firebase/index";
-
+import "../NavBar/NavBar.css"
 
 function NavBar(){
     const [data, setData] = useState([])
-
-    let nombreH1={
-        color: "white",
-        fontSize: "30px"
-    }
-    let navBarStyle = {
-        backgroundColor: "grey",
-        border:"none"
-    }
-    let vinculo={
-        color: "white",
-        textDecorationLine: "none",
-    }
-
     const [dropdown, setDropdown] = useState(false);
 
     const nombreCategorias = [];
@@ -51,30 +37,29 @@ function NavBar(){
         getDataFromFirestore();
     }, []);
     return(
-        <div className="py-3" style={navBarStyle}>
+        <div className="py-3 navBarStyle">
             <div className="row">
                 <div className="col-12 col-sm text-center mx-5">
-                    <Link to="/" style={{textDecoration:"none"}}><h1 style={nombreH1} >TusBebidasOnline</h1></Link>
+                    <Link to="/" id="linkH1"><h1 id="nombreH1" >TusBebidasOnline</h1></Link>
                 </div>
                 <div className="col  mt-2">
-                    <NavLink to="/" style={vinculo}>Inicio</NavLink>
+                    <NavLink to="/" className="vinculo">Inicio</NavLink>
                 </div>
                 <Dropdown isOpen={dropdown} toggle={abriCerrarDrop} className="col-sm my-auto" >
-                        <Dropdown.Toggle  style={navBarStyle} >
-                            <span style={vinculo}>Categorias</span>
+                        <Dropdown.Toggle  id="dropDown" >
+                            <span className="vinculo">Categorias</span>
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
-                        {unicos.map((product)=>(
-                            <Dropdown.Item>
-                                <NavLink to={"category/"+product.id} style={{textDecoration:"none", color:"black"}} >{product.name}</NavLink>
-                            </Dropdown.Item>
-                           )
-                        )}
-
+                            {unicos.map((product)=>(
+                                <Dropdown.Item id="dropItem">
+                                    <NavLink to={"category/"+product.id} className="nombresCategorias">{product.name}</NavLink>
+                                </Dropdown.Item>
+                            )
+                            )}
                         </Dropdown.Menu>
                 </Dropdown>
                 <div className="col mt-2">
-                    <NavLink to="/aboutUs" style={vinculo}  >Sobre Nosotros</NavLink>
+                    <NavLink to="/aboutUs" className="vinculo"  >Sobre Nosotros</NavLink>
                 </div>
                 <div className="col">
                     <Link to="/cart"><CartWidget Cart={Cart}/></Link>
