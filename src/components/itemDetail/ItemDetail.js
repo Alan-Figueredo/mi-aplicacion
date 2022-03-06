@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { getFirestore } from "../../firebase";
-import { ItemCount } from "../ItemCount";
+import { ItemCount } from "../ItemCount/ItemCount";
 import "../itemDetail/ItemDetail.css"
 export const ItemDetail =()=>{
     const { addItem } = useCart();

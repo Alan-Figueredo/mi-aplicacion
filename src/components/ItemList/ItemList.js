@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Item } from "../Item/Item.js";
 import { getFirestore } from "../../firebase/index.js";
-import { EtiquetaCerveza } from "../EtiquetaCerveza.js";
-import { EtiquetaRon } from "../EtiquetaRon.js";
+import { EtiquetaCerveza } from "../Etiquetas/EtiquetaCerveza.js";
+import { EtiquetaRon } from "../Etiquetas/EtiquetaRon.js";
 import "../ItemList/ItemList.css"
 
 function ItemList (){

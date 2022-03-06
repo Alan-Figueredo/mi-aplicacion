@@ -1,11 +1,11 @@
 import "bootstrap/dist/css/bootstrap.css";
-import CartWidget from "./CartWidget/CartWidget.js";
-import Cart from "../images/Cart.png"
+import CartWidget from "./../CartWidget/CartWidget.js";
+import Cart from "../../images/Cart.png"
 import { Link, NavLink } from "react-router-dom";
-import "../components/NavBar.css"
+import "../../components/NavBar/NavBar.css"
 import { Dropdown } from "react-bootstrap";
 import { useEffect, useState } from "react";
-import { getFirestore } from "../firebase/index";
+import { getFirestore } from "../../firebase/index";
 
 
 function NavBar(){

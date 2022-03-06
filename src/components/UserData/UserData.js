@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { getFirestore } from "../firebase";
-import { useCart } from "../context/CartContext";
+import { getFirestore } from "../../firebase";
+import { useCart } from "../../context/CartContext";
 import { useNavigate } from "react-router-dom";
 const UserData = ()=>{
     const { cart, removeItem, clearAll } = useCart();

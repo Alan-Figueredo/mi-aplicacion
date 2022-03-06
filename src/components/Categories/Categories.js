@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { getFirestore } from "../firebase/index";
-import { Item } from "./Item/Item";
+import { useParams } from "react-router-dom";
+import { getFirestore } from "../../firebase/index";
+import { Item } from "../Item/Item";
 
 const Categories=()=>{
     const [data, setData] =useState([]);

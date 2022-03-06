@@ -1,15 +1,16 @@
 import React, { useState } from "react"
 import "bootstrap/dist/css/bootstrap.min.css"
 import "../ItemListContainer/ItemListContainer.css"
-import ItemList from "../ItemList/ItemList.css";
+import ItemList from "../ItemList/ItemList";
 import { useAge } from "../../context/AgeContext";
+import "../ItemListContainer/ItemListContainer.css"
 
 const ItemListContainer =()=>{
     const {mayor, setMayor} = useAge();
     const {hidden, setHidden} = useAge();
     return(
-        <div className="container" id="container">
-            <div className="card mt-5" id="card"  hidden={hidden}>
+        <div className="container" id="itemContainer">
+            <div className="card mt-5" id="card" hidden={hidden}>
                 <h2 className="mt-3">Para ingresar a la pagina debes ser mayor de 18</h2>
                 <p className="mb-5" id="mayor">¿Eres mayor a 18?</p>
                 <button className="mb-2 btn btn-primary botonSiNo" onClick={
@@ -18,7 +19,7 @@ const ItemListContainer =()=>{
                         setHidden(true);
                     }
                     }
-                   >Si</button>
+                    >Si</button>
                 <button className="mb-5 btn btn-primary botonSiNo" onClick={
                     (evt)=>{evt.preventDefault();
                         setMayor(false)

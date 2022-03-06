@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
-import UserData from "../UserData";
+import UserData from "../UserData/UserData";
 import "../Cart/Cart.css"
 const Cart =()=>{
     const { cart, removeItem, clearAll } = useCart();

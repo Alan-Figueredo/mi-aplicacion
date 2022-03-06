@@ -6,7 +6,7 @@
     text-align: center;
     width: 400px;
 }
-#container{
+#itemContainer{
     display: flex;
     flex-direction: column;
     min-height: 70vh;
