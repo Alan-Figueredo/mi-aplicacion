@@ -26,12 +26,12 @@ const ThankYouPage =()=>{
             {order?.items?.map((purchase)=>{
                         return (
                         <div className="mx-2" key={purchase.item.id}>
-                            <div  className=" text-center mt-3" style={{justifyContent:"center", width:"86%"}}>
+                            <div  className=" text-center mt-3">
                             <div className="row my-2 mx-2">
-                                <div className="col-2">
+                                <div className="col-sm-2 col-12">
                                     <img src={purchase.item.img} alt={purchase.item.name} className="img-fluid"/>
                                 </div>
-                                <div className="col-10">
+                                <div className="col-sm-10 col-12" style={{ width:"67%"}}>
                                     <p className="mt-2">Producto: {purchase.item.name}</p>
                                     <p>Cantidad: {purchase.quantity}</p>
                                     <p>Precio: ${parseInt(purchase.quantity * purchase.item.price)}</p>
