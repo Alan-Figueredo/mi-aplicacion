@@ -48,10 +48,10 @@ export const ItemDetail =()=>{
     return(
             <div className="shadow text-center card mt-5" id="container">
                 <div className="card-body row">
-                    <div className="col-sm-7">
+                    <div className="col-sm-7 col-12">
                         <img className="img-fluid img-thumbnail" src={product.img} alt={product.name}/>
                     </div>
-                    <div className="col-sm-5" >
+                    <div className="col-sm-5 col-12" >
                         <h5 className="card-title" id="tituloCard">{product.name}</h5>
                         <p className="card-text">{product.description}</p>
                         <p className="card-text">Stock disponible: {product.stock}</p>

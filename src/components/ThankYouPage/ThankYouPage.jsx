@@ -18,8 +18,10 @@ const ThankYouPage =()=>{
 
     return (
         <div className="card text-center my-5" id="cardThanks" >
-            <h2 className="mt-3">¡Gracias por tu compra {order?.buyer?.name}! </h2>
+            <h2 className="mt-3">¡Gracias por tu compra {order?.buyer?.name} {order?.buyer?.lastName}! </h2>
             <h3>Detalle de su compra:</h3>
+            <h4 className="my-3">Numero de compra: {order.id}</h4>
+            <h4 className="my-3">Fecha de operación: {order.fecha}</h4>
             {order?.items?.map((purchase)=>{
                         return (
                         <div className="mx-2" key={purchase.item.id}>
