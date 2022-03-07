@@ -14,17 +14,17 @@ const Cart =()=>{
     }
     return(
         <div id="Container">
-            <div className="card mt-3" style={{width:"95rem", marginLeft:"auto", marginRight:"auto"}}>
+            <div className="card mt-3" style={{width:"80%", marginLeft:"auto", marginRight:"auto"}}>
                 {cart[0] == null && <div className="my-5 text-center"><h2>Ups! Parece que no tenes nada en el carrito.</h2><p>¡Volve a la tienda para encontrar los productos que necesitas!</p><Link to="/"><button className="btn btn-primary mt-3">Volver a la tienda</button></Link></div>}
                 {cart.map((purchase)=>{
                         return (
                         <div className="mx-2" key={purchase.item.id}>
                             <div  className=" text-center mt-3" id="productos">
                             <div className="row my-2 mx-2">
-                                <div className="col-2">
+                                <div className="col-sm-2 col-12">
                                     <img src={purchase.item.img} alt={purchase.item.name} className="img-thumbnail"/>
                                 </div>
-                                <div className="col-10">
+                                <div className="col-sm-10 col-12">
                                     <p className="mt-2">Producto: {purchase.item.name}</p>
                                     <p>Cantidad: {purchase.quantity}</p>
                                     <p>Precio: ${parseInt(purchase.quantity * purchase.item.price)}</p>

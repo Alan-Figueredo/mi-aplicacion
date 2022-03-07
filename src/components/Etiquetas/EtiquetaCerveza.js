@@ -3,7 +3,7 @@ import "../Etiquetas/Etiquetas.css"
 
 export const EtiquetaCerveza = ()=>{
     return(
-        <div className="card col-sm mx-2 shadow">
+        <div className="card col-sm mx-2 shadow mb-sm-0 mb-2">
                 <div className="row">
                     <div className="col-12 col-sm-6">
                         <p className="etiquetaTitulo" >Promo de verano</p>

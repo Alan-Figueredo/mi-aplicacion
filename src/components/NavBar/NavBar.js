@@ -39,13 +39,13 @@ function NavBar(){
     return(
         <div className="py-3 navBarStyle">
             <div className="row">
-                <div className="col-12 col-sm text-center mx-5">
+                <div className="col-12 col-sm text-center mr-5">
                     <Link to="/" id="linkH1"><h1 id="nombreH1" >TusBebidasOnline</h1></Link>
                 </div>
-                <div className="col  mt-2">
+                <div className="col-sm col-12 text-center   mt-2">
                     <NavLink to="/" className="vinculo">Inicio</NavLink>
                 </div>
-                <Dropdown isOpen={dropdown} toggle={abriCerrarDrop} className="col-sm my-auto" >
+                <Dropdown isOpen={dropdown} toggle={abriCerrarDrop} className="col-sm col-12 text-center my-auto" >
                         <Dropdown.Toggle  id="dropDown" >
                             <span className="vinculo">Categorias</span>
                         </Dropdown.Toggle>
@@ -58,10 +58,10 @@ function NavBar(){
                             )}
                         </Dropdown.Menu>
                 </Dropdown>
-                <div className="col mt-2">
-                    <NavLink to="/aboutUs" className="vinculo"  >Sobre Nosotros</NavLink>
+                <div className="col-sm col-12 text-center mt-2">
+                    <NavLink to="/aboutUs" className="vinculo">Sobre Nosotros</NavLink>
                 </div>
-                <div className="col">
+                <div className="col-sm col-12 text-center mt-sm-0 mt-3">
                     <Link to="/cart"><CartWidget Cart={Cart}/></Link>
                     
                 </div>
