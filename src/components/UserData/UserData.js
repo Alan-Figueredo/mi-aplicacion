@@ -8,7 +8,9 @@ const UserData = ()=>{
     const [name, setName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
+    const [confirmEmail, setConfirmEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [diff, setDiff] = useState(true);
     const [hidden, setHidden] = useState(true);
     let navigate = useNavigate();
     const addZero=(i)=> {
@@ -38,7 +40,7 @@ const UserData = ()=>{
     const handleSubmit = (evt)=>{
         evt.preventDefault()
 
-        if(!name || !phone || !lastName || !email){
+        if(!name || !phone || !lastName || !email || (email != confirmEmail)){
             return false;
         }
         const newOrder = { 
@@ -69,6 +71,12 @@ const UserData = ()=>{
             
             <label htmlFor="e-mail">E-mail</label>
             <input type="text" id="email" name="email" placeholder="Escriba su mail" className="form-control" value={email} onChange={(e)=> {setEmail(e.target.value); setHidden(true) }}/>
+
+            <label htmlFor="e-mail">Confirmación E-mail</label>
+            <input type="text" id="confirmacionEmail" name="confirmacionEmail" placeholder="Vuelva a escribir su mail" className="form-control" value={confirmEmail} onChange={(e)=> {setConfirmEmail(e.target.value); e.target.value != email?
+                (setDiff(false)) : (setDiff(true)); setHidden(true) }}/>
+
+            <div className="alert alert-danger" hidden={diff} role="alert" id="alertaDatos">Los mails deben coincidir!</div>
 
             <label htmlFor="phone">Telefono</label>
             <input type="number" id="phone" name="phone" placeholder="Escriba su numero de telefono" className="form-control" value={phone} onChange={(e)=> {setPhone(e.target.value); setHidden(true) }}/>
