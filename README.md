@@ -71,4 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ### Notas del developer
 
-Este es un proyecto dedicado a la venta de alcohol para mayores de 18 años. Desarrollado con React JS
+Este es un proyecto dedicado a la venta de alcohol para mayores de 18 años. Desarrollado con React JS para el curso de CoderHouse.
+Se usaron hooks y para simular una base de datos, los mismos se extraen de firebase.
+Tambien se aplicó al proyecto Bootstrap y fontAwesome, con los cuales apliqué estilos al proyecto.
+Se dejó un archivo .env.example para simular el comportamiento del .env original
